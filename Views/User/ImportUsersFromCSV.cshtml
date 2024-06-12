@@ -1,0 +1,22 @@
+﻿@model ContactApplication.Models.User
+
+@{
+    ViewBag.Title = "ImportUsersFromCSV";
+}
+
+<h2>Bulk Import Users</h2>
+
+<form method="post" enctype="multipart/form-data" class="w-50" action="@Url.Action("ImportUsersFromCSV", "User")">
+    <div class="form-group">
+
+        <div class="mb-3">
+        <label for="formFile" class="form-label">Import users from a CSV file with the columns Name and Email.</label>
+        <input class="form-control" type="file" id="file" name="file" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Import Users</button>
+</form>
+
+@section Scripts {
+    <script src="~/js/jquery-3.4.1.js.js"></script>
+}
